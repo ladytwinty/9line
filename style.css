@@ -1,0 +1,36 @@
+body{
+	
+}
+.site-flex{
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+.site-center{
+	margin: auto;
+	width: 100%;
+	height: 500px;
+	background: #f0f0f0;
+	border: 3px solid red;
+	position: relative;
+}
+.site-center span{
+	display: block;
+	font-size: 20px;
+	margin-top: 30px;
+}
+.site-center p{
+	font-size: 24px;
+	display: block;
+	margin: 50px auto 0;
+}
+.site-center .bg{
+	max-width: 100%;
+	margin-top: 50px;
+}
+.site-center .arrow{
+	position: absolute;
+	left: 47%;
+	top: 295px;
+	transform: rotate(0deg);
+}

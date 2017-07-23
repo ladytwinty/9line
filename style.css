@@ -24,13 +24,24 @@ body{
 	display: block;
 	margin: 50px auto 0;
 }
-.site-center .bg{
-	max-width: 100%;
-	margin-top: 50px;
+.img-wrap{
+	max-width: 253px;
+	height: 127px;
+	margin: 50px auto 0;
+	position: relative;
+	background-image: url("bg.png");
+	background-size: cover;
 }
-.site-center .arrow{
+.img-wrap .arrow-wrap{
 	position: absolute;
-	left: 47%;
-	top: 295px;
-	transform: rotate(0deg);
+	left: 22%;
+	bottom: -70px;
+	width: 144px;
+	height: 144px;
+	background-image: url("arrow3.png");
+	background-size: cover;
+}
+.persent{
+	color: blue;
+	font-size: 30px;
 }

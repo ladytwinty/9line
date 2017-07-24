@@ -1,7 +1,14 @@
 var bufferAngle = 0 // хранит теперешний угол стрелки
-$(document).ready(function(){
+
+$(document).ready(function() {
+
+	$(".form-skill-checkbox-wrap").each(function(i) {
+		$(this).find("input").attr("id", "checkbox" + i);
+		$(this).find("label").attr("for", "checkbox" + i);
+	});
+
 	$('.img-wrap').click(function(e) {
-		  //
+		  
 		  var relativeX = (e.pageX - $(this).offset().left);
 		  var relativeY = (e.pageY - $(this).offset().top);
 		  //координаты курсора(x,y) при клике
@@ -9,7 +16,7 @@ $(document).ready(function(){
 						'x': relativeX,
 						'y': relativeY
 					};
-		  // точка относительно которой идет высщитивание угла
+		  // точка относительно которой идет высчитывание угла
 		  point_coords = {
 		  	'x':$(this).width() / 2,
 		  	'y':$(this).height() 
@@ -20,14 +27,15 @@ $(document).ready(function(){
 		  animateRotate(angle)
 		  // сохраняем теперешнее состояние
 		  bufferAngle = angle
-		});
+	});
+ 
 });
 
 function animateRotate(d){
     var elem = $(".arrow-wrap");
 
     $({deg: bufferAngle}).animate({deg: d}, {
-        duration: 1000,
+        duration: 800,
         step: function(now){
             elem.css({
                  transform: "rotate(" + now + "deg)"
@@ -36,10 +44,15 @@ function animateRotate(d){
         }
     });
 }
-	function showProcent(angle) {
+	function showProcent(angle) {  
+		proccent = 100 - Math.floor((angle / 180) * 100);  
+	$('.persent').text(proccent + "%") 
+	}
+
+	/*function showProcent(angle) {
 		proccent = Math.floor((angle / 180) * 100);
 		$('.persent').text(proccent + "%")
-	}	
+	}	*/
 
 	function getAngle(ms, ctr) {
 		var x     = ms.x - ctr.x,
@@ -66,4 +79,3 @@ function animateRotate(d){
     function radToDeg(r) {
     	return (r * (180 / Math.PI));
     };
-
